@@ -8,7 +8,7 @@ class Lista:
 
     def imprimir(self):
         print(" ---------- ")
-        print(" Lista encadeada - Ordem de Chegada")
+        print(" Lista encadeada - Ordem de Crescente")
         if self.inicio is None:
             print(" Não há elementos a serem exibidos.")
         else:

@@ -8,3 +8,6 @@ lista.add("Rafa")
 lista.add("Rafaela")
 lista.add("Rafa Guimarães")
 lista.add("Rafinha")
+
+lista.remove("nada")
+lista.remove("Eu")
