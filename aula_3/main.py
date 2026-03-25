@@ -1,4 +1,4 @@
-from lista_encd import Lista
+from lista_asc import Lista
 
 lista = Lista()
 

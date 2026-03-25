@@ -24,10 +24,22 @@ class Lista:
         if self.inicio is None:
             self.inicio = nodo
         else:
-            aux = self.inicio
-            while aux.prox:
-                aux = aux.prox
-            aux.prox = nodo
+            if nodo.dado < self.inicio.dado:
+                nodo.prox = self.inicio
+                self.inicio = nodo
+            else:
+                ant = self.inicio
+                aux = self.inicio.prox
+                while aux:
+                    if nodo.dado < aux.dado:
+                        nodo.prox = aux
+                        ant.prox = nodo
+                        break
+                    else:
+                        ant = aux
+                        aux = aux.prox 
+                if aux == None:        
+                    ant.prox = nodo        
         
         self.imprimir()
 
