@@ -29,17 +29,17 @@ class Arvore:
             self.imprimirEmOrdem(raiz.dir)
 
 
-    def imprimiPreOrdem(self, raiz: No):
+    def imprimirPreOrdem(self, raiz: No):
         if raiz is not None:
             print(raiz.dado, end = " - ")
-            self.imprimiPreOrdem(raiz.esq)
-            self.imprimiPreOrdem(raiz.dir)
+            self.imprimirPreOrdem(raiz.esq)
+            self.imprimirPreOrdem(raiz.dir)
 
 
-    def imprimiPosOrdem(self, raiz: No):
+    def imprimirPosOrdem(self, raiz: No):
         if raiz is not None:
-            self.imprimiPosOrdem(raiz.esq)
-            self.imprimiPosOrdem(raiz.dir)
+            self.imprimirPosOrdem(raiz.esq)
+            self.imprimirPosOrdem(raiz.dir)
             print(raiz.dado, end = " - ")
 
 
@@ -50,4 +50,20 @@ class Arvore:
             self.imprimirReverso(raiz.esq)
 
     def imprimirEmNivel(self, raiz: No):
+        if raiz == None:
+            return
+        fila = Fila()
+        fila.add( raiz )
 
+        while fila.inicio != None:
+            tamanho = fila.tamanho
+            for _ in range( tamanho ):
+                atual = fila.remover()
+                print( atual.dado, end = " - ")
+
+                if atual.esq != None:
+                    fila.add( atual.esq )
+                if atual.dir != None:
+                    fila.add( atual.dir )
+
+            print("")
