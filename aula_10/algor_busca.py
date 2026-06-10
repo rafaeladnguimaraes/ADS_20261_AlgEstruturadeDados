@@ -9,7 +9,3 @@ class Busca:
         while i < self.tam:
             
             
-
-
-
-
